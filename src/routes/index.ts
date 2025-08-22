@@ -7,6 +7,8 @@ import { createBrowserRouter } from "react-router";
 import { adminSidebarMenu } from "./adminSidebarMenu";
 import { userSidebarMenu } from "./userSidebarMenu";
 import { driverSidebarMenu } from "./driverSidebarMenu";
+import Unauthorized from "@/pages/Unauthorized";
+import { withAuth } from "@/utils/withAuth";
 
 const DashboardLayout = lazy(
   () => import("@/components/Layouts/DashboardLayout")
@@ -46,17 +48,17 @@ export const router = createBrowserRouter([
   },
   {
     path: "/admin",
-    Component: DashboardLayout,
+    Component: withAuth(DashboardLayout, ["ADMIN"]),
     children: generateRoutes(adminSidebarMenu),
   },
   {
     path: "/user",
-    Component: DashboardLayout,
+    Component: withAuth(DashboardLayout, ["USER"]),
     children: generateRoutes(userSidebarMenu),
   },
   {
     path: "/driver",
-    Component: DashboardLayout,
+    Component: withAuth(DashboardLayout, ["DRIVER"]),
     children: generateRoutes(driverSidebarMenu),
   },
   {
@@ -66,5 +68,9 @@ export const router = createBrowserRouter([
   {
     path: "/register",
     Component: Register,
+  },
+  {
+    path: "/unauthorized",
+    Component: Unauthorized,
   },
 ]);

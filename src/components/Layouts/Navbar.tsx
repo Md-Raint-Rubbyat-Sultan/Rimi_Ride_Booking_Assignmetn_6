@@ -25,9 +25,9 @@ const navigationLinks = [
   { href: "/features", label: "Features", role: "public" },
   { href: "/contacts", label: "Contacts", role: "public" },
   { href: "/faq", label: "FAQ", role: "public" },
-  { href: "/admin", label: "Dashboard", role: "admin" },
-  { href: "/user", label: "Dashboard", role: "user" },
-  { href: "/driver", label: "Dashboard", role: "driver" },
+  { href: "/admin/user-management", label: "Dashboard", role: "admin" },
+  { href: "/user/ride-history", label: "Dashboard", role: "user" },
+  { href: "/driver/ride-requests", label: "Dashboard", role: "driver" },
 ];
 
 const Navbar = () => {
