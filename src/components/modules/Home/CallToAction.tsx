@@ -6,7 +6,7 @@ const CallToActionSection = () => {
   const { data: user } = useGetMeQuery(undefined);
 
   return (
-    <section className="border-l-8 border-primary py-20 mt-16">
+    <section className="border border-l-8 border-l-primary rounded-2xl shadow py-20 mt-16">
       <div className="max-w-4xl mx-auto text-center px-6">
         <h2 className="text-4xl font-bold text-accent-foreground mb-4">
           Ready to Ride?

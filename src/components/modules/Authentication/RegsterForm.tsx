@@ -63,7 +63,6 @@ const RegisterForm: React.FC<Props> = () => {
       password: data.password,
       phone: data.phone,
     };
-    console.log(userInfo);
     try {
       const result = await register(userInfo).unwrap();
       console.log(result);

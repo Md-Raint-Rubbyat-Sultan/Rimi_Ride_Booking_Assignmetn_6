@@ -2,6 +2,7 @@ import AnalyticsDashboard from "@/pages/Admin/AnalyticsDashboard";
 import RideOversite from "@/pages/Admin/RideOversite";
 import UserManagement from "@/pages/Admin/UserManagement";
 import Profile from "@/pages/Profile";
+import RideDetails from "@/pages/User/RideDetails";
 
 export const adminSidebarMenu = [
   {
@@ -32,6 +33,11 @@ export const adminSidebarMenu = [
   {
     title: "Profile",
     items: [
+      {
+        title: "Ride Details",
+        url: "/admin/ride-details",
+        Component: RideDetails,
+      },
       {
         title: "Profile",
         url: "/admin/profile",

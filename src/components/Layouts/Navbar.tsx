@@ -120,6 +120,9 @@ const Navbar = () => {
                       )
                     )
                   )}
+                  <Button variant={"default"} asChild>
+                    <Link to={"/book-ride"}>Book A Ride</Link>
+                  </Button>
                 </NavigationMenuList>
               </NavigationMenu>
             </PopoverContent>
@@ -155,6 +158,9 @@ const Navbar = () => {
                     )
                   )
                 )}
+                <Button variant={"default"} asChild>
+                  <Link to={"/book-ride"}>Book A Ride</Link>
+                </Button>
               </NavigationMenuList>
             </NavigationMenu>
           </div>

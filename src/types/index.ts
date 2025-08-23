@@ -12,6 +12,13 @@ export type {
   Role,
 } from "@/types/Auth/userType";
 
+export type {
+  ILoaction,
+  LatLng,
+  IRideRequest,
+  IRideDetails,
+} from "@/types/BookRide/rideTypes";
+
 export interface IMetaData {
   page: number;
   limit: number;

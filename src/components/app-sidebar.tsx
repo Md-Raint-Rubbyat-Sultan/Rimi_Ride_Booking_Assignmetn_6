@@ -1,4 +1,4 @@
-import * as React from "react";
+import Logo from "@/assets/icons/Logo";
 import {
   Sidebar,
   SidebarContent,
@@ -11,15 +11,16 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar";
-import Logo from "@/assets/icons/Logo";
-import { Link } from "react-router";
-import { getSidebarMenu } from "@/utils/getSidebarMenu";
 import { useGetMeQuery } from "@/redux/feature/user/user.api";
+import { getSidebarMenu } from "@/utils/getSidebarMenu";
+import * as React from "react";
+import { Link } from "react-router";
+import { SkeletonCard } from "./skeletonCard";
 
 const AppSidebar = ({ ...props }: React.ComponentProps<typeof Sidebar>) => {
   const { data: userInfo, isLoading } = useGetMeQuery(undefined);
 
-  if (isLoading) return;
+  if (isLoading) return <SkeletonCard />;
 
   const data = {
     navMain: getSidebarMenu(userInfo!.data?.role),

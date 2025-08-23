@@ -39,10 +39,8 @@ const LoginForm: React.FC<Props> = () => {
 
   const onSubmit = async (data: z.infer<typeof loginSchema>) => {
     const toastId = toast.loading("Loged In...");
-    console.log(data);
     try {
       const result = await login(data).unwrap();
-      console.log(result);
       if (result.success) {
         toast.success(result.message, { id: toastId });
         navigate(location.state?.path || "/");

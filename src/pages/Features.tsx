@@ -115,7 +115,7 @@ const Features: React.FC<Props> = () => {
                         </motion.div>
 
                         {/* Feature Label */}
-                        <span className="text-muted-foreground group-hover:text-primary transition-colors pl-2">
+                        <span className="text-foreground group-hover:text-primary transition-colors pl-2">
                           {feature}
                         </span>
                       </motion.div>

@@ -4,13 +4,14 @@ import { Link, Navigate } from "react-router";
 import registerImg from "@/assets/images/register.jpg";
 import RegisterForm from "@/components/modules/Authentication/RegsterForm";
 import { useGetMeQuery } from "@/redux/feature/user/user.api";
+import { SkeletonCard } from "@/components/skeletonCard";
 
 type Props = {};
 
 const Register: React.FC<Props> = () => {
   const { data: user, isLoading: userLoading } = useGetMeQuery(undefined);
 
-  if (userLoading) return;
+  if (userLoading) return <SkeletonCard />;
 
   if (user) return <Navigate to={"/"} replace={true} />;
 

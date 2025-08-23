@@ -4,6 +4,7 @@ import DriverHistory from "@/pages/Driver/DriverHistory";
 import Earnings from "@/pages/Driver/Earnings";
 import RideRequests from "@/pages/Driver/RideRequests";
 import Profile from "@/pages/Profile";
+import RideDetails from "@/pages/User/RideDetails";
 
 export const driverSidebarMenu = [
   {
@@ -29,6 +30,11 @@ export const driverSidebarMenu = [
   {
     title: "Profile",
     items: [
+      {
+        title: "Ride Details",
+        url: "/driver/ride-details",
+        Component: RideDetails,
+      },
       {
         title: "Eranings",
         url: "/driver/earnings",

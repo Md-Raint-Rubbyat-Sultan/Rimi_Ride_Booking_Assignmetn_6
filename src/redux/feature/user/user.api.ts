@@ -15,14 +15,7 @@ export const userApi = baseApi.injectEndpoints({
       }),
       providesTags: ["user"],
     }),
-    login: builder.mutation<IResponse<string>, null>({
-      query: (userInfo) => ({
-        url: "/auth/login",
-        method: "POST",
-        data: userInfo,
-      }),
-    }),
   }),
 });
 
-export const { useGetMeQuery, useGetAdminsQuery, useLoginMutation } = userApi;
+export const { useGetMeQuery, useGetAdminsQuery } = userApi;

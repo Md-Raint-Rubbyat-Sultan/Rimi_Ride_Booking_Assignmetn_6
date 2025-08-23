@@ -20,7 +20,6 @@ const About: React.FC<Props> = () => {
     useGetAdminsQuery(undefined);
 
   if (adminLoadings) return <SkeletonCard />;
-  console.log(admins);
 
   const team: IUser[] = admins?.data || [];
 

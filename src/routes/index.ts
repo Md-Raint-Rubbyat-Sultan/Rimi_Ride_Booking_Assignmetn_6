@@ -1,14 +1,15 @@
 import App from "@/App";
+import BookRide from "@/pages/BookRide";
 import Home from "@/pages/Home";
 import Login from "@/pages/Login";
+import Unauthorized from "@/pages/Unauthorized";
 import { generateRoutes } from "@/utils/generateRoutes";
+import { withAuth } from "@/utils/withAuth";
 import { lazy } from "react";
 import { createBrowserRouter } from "react-router";
 import { adminSidebarMenu } from "./adminSidebarMenu";
-import { userSidebarMenu } from "./userSidebarMenu";
 import { driverSidebarMenu } from "./driverSidebarMenu";
-import Unauthorized from "@/pages/Unauthorized";
-import { withAuth } from "@/utils/withAuth";
+import { userSidebarMenu } from "./userSidebarMenu";
 
 const DashboardLayout = lazy(
   () => import("@/components/Layouts/DashboardLayout")
@@ -43,6 +44,10 @@ export const router = createBrowserRouter([
       {
         path: "faq",
         Component: FAQ,
+      },
+      {
+        path: "book-ride",
+        Component: withAuth(BookRide),
       },
     ],
   },
