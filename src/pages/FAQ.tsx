@@ -41,8 +41,10 @@ const faqData: FAQItem[] = [
 const FAQ: React.FC<Props> = () => {
   const [search, setSearch] = useState("");
 
-  const filteredFAQs = faqData.filter((faq) =>
-    faq.question.toLowerCase().includes(search.toLowerCase())
+  const filteredFAQs = faqData.filter(
+    (faq) =>
+      faq.question.toLowerCase().includes(search.toLowerCase()) ||
+      faq.answer.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
@@ -77,7 +79,7 @@ const FAQ: React.FC<Props> = () => {
                     <CardTitle>{faq.question}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600">{faq.answer}</p>
+                    <p className="text-foreground">{faq.answer}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -88,7 +90,7 @@ const FAQ: React.FC<Props> = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="text-center text-gray-500"
+              className="text-center text-foreground"
             >
               No questions found.
             </motion.p>
