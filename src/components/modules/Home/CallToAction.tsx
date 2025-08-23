@@ -6,12 +6,12 @@ const CallToActionSection = () => {
   const { data: user } = useGetMeQuery(undefined);
 
   return (
-    <section className="bg-gradient-to-br from-30% from-primary via-40% via-primary to-primary-foreground py-20 mt-16">
+    <section className="border-l-8 border-primary py-20 mt-16">
       <div className="max-w-4xl mx-auto text-center px-6">
         <h2 className="text-4xl font-bold text-accent-foreground mb-4">
           Ready to Ride?
         </h2>
-        <p className="text-lg text-muted mb-8">
+        <p className="text-lg text-muted-foreground mb-8">
           Sign up now or book a ride instantly and enjoy a safe, fast, and
           reliable journey.
         </p>
