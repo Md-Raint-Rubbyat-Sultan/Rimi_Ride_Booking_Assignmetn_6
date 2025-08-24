@@ -29,8 +29,6 @@ const RideHistory: React.FC<Props> = () => {
 
   if (isLoading) return <SkeletonDemo />;
 
-  console.log(data);
-
   return (
     <div className="space-y-4">
       <Table>

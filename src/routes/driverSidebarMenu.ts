@@ -1,5 +1,4 @@
 import ActiveRide from "@/pages/Driver/ActiveRide";
-import Availability from "@/pages/Driver/Availability";
 import Earnings from "@/pages/Driver/Earnings";
 import RideRequests from "@/pages/Driver/RideRequests";
 import Profile from "@/pages/Profile";
@@ -19,11 +18,6 @@ export const driverSidebarMenu = [
         title: "Active Ride",
         url: "/driver/active-ride",
         Component: ActiveRide,
-      },
-      {
-        title: "Availability",
-        url: "/driver/avalilability",
-        Component: Availability,
       },
     ],
   },

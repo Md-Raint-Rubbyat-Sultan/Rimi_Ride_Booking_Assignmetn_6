@@ -15,7 +15,6 @@ type Props = {
 const FilterRideHistory: React.FC<Props> = ({ setSort, setStatus }) => {
   const onFilterSubmit = async (data: string) => {
     setSort(data);
-    console.log(data);
   };
 
   const onStatusSubmit = async (data: string) => {
@@ -24,7 +23,6 @@ const FilterRideHistory: React.FC<Props> = ({ setSort, setStatus }) => {
     } else {
       setStatus(data);
     }
-    console.log(data);
   };
 
   return (
