@@ -15,7 +15,19 @@ export const userApi = baseApi.injectEndpoints({
       }),
       providesTags: ["user"],
     }),
+    updateUser: builder.mutation<
+      IResponse<Partial<IUser>>,
+      Partial<IUser> & { _id: string }
+    >({
+      query: ({ _id, ...rest }) => ({
+        url: `/user/${_id}`,
+        method: "PATCH",
+        data: rest,
+      }),
+      invalidatesTags: ["user"],
+    }),
   }),
 });
 
-export const { useGetMeQuery, useGetAdminsQuery } = userApi;
+export const { useGetMeQuery, useGetAdminsQuery, useUpdateUserMutation } =
+  userApi;

@@ -57,7 +57,7 @@ const CostCard: React.FC<Props> = ({ amount, distance, start, end }) => {
     >
       <Card className="p-4 w-full md:w-auto">
         <span className="text-lg font-semibold">
-          Cost: ${amount.toFixed(2)}
+          Cost: ৳ {amount.toFixed(2)}
         </span>
         <span className="text-lg font-semibold">
           Distance: {distance.toFixed(2)}km

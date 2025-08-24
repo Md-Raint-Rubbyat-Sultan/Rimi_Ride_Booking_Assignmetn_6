@@ -47,13 +47,3 @@ export interface ISidebarItems {
     Component: ComponentType;
   }[];
 }
-
-// export interface NavMain {
-//   title: string;
-//   items: Item[];
-// }
-
-// export interface Item {
-//   title: string;
-//   url: string;
-// }

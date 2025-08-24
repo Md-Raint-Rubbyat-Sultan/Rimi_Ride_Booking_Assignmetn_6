@@ -12,6 +12,7 @@ export interface IAuthProviders {
 }
 
 export interface IUser {
+  _id: string;
   name: string;
   auth: IAuthProviders[];
   role: Role;

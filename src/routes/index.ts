@@ -1,5 +1,4 @@
 import App from "@/App";
-import BookRide from "@/pages/BookRide";
 import Home from "@/pages/Home";
 import Login from "@/pages/Login";
 import Unauthorized from "@/pages/Unauthorized";
@@ -19,6 +18,7 @@ const About = lazy(() => import("@/pages/About"));
 const Contacts = lazy(() => import("@/pages/Contacts"));
 const FAQ = lazy(() => import("@/pages/FAQ"));
 const Features = lazy(() => import("@/pages/Features"));
+const BookRide = lazy(() => import("@/pages/BookRide"));
 
 export const router = createBrowserRouter([
   {

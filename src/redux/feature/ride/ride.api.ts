@@ -9,6 +9,13 @@ export const rideApi = baseApi.injectEndpoints({
       }),
       providesTags: ["ride"],
     }),
+    getRideHistory: builder.query<IResponse<IRideDetails[]>, unknown>({
+      query: (params) => ({
+        url: "/ride/history",
+        params,
+      }),
+      providesTags: ["ride"],
+    }),
     bookRide: builder.mutation<IResponse<IRideRequest>, ILoaction>({
       query: (location) => ({
         url: "/ride/request",
@@ -28,6 +35,7 @@ export const rideApi = baseApi.injectEndpoints({
 
 export const {
   useGetRideDetailsQuery,
+  useGetRideHistoryQuery,
   useBookRideMutation,
   useCancelRideMutation,
 } = rideApi;

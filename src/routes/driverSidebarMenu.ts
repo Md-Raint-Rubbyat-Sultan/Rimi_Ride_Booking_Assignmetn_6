@@ -1,10 +1,10 @@
 import ActiveRide from "@/pages/Driver/ActiveRide";
 import Availability from "@/pages/Driver/Availability";
-import DriverHistory from "@/pages/Driver/DriverHistory";
 import Earnings from "@/pages/Driver/Earnings";
 import RideRequests from "@/pages/Driver/RideRequests";
 import Profile from "@/pages/Profile";
 import RideDetails from "@/pages/User/RideDetails";
+import RideHistory from "@/pages/User/RideHistory";
 
 export const driverSidebarMenu = [
   {
@@ -43,7 +43,7 @@ export const driverSidebarMenu = [
       {
         title: "Reide History",
         url: "/driver/driver-history",
-        Component: DriverHistory,
+        Component: RideHistory,
       },
       {
         title: "Profile",
