@@ -1,5 +1,5 @@
 import { baseApi } from "@/redux/baseApi";
-import type { IResponse, IRideDetails, IUser } from "@/types";
+import type { IResponse, IRideDetails, IRideRequest, IUser } from "@/types";
 
 export const driverApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
@@ -17,28 +17,44 @@ export const driverApi = baseApi.injectEndpoints({
       }),
       providesTags: ["driver"],
     }),
-    getAdmins: builder.query<IResponse<IUser[]>, undefined>({
-      query: () => ({
-        url: "/user/admins",
+    getAllRideRequest: builder.query<IResponse<IRideRequest[]>, unknown>({
+      query: (params) => ({
+        url: "/driver/get-ride-request",
+        params,
       }),
-      providesTags: ["user"],
+      providesTags: ["driver"],
     }),
-    updateUser: builder.mutation<
-      IResponse<Partial<IUser>>,
-      Partial<IUser> & { _id: string }
-    >({
-      query: ({ _id, ...rest }) => ({
-        url: `/user/${_id}`,
-        method: "PATCH",
-        data: rest,
+    getPendingRideRequest: builder.query<IResponse<IRideDetails>, undefined>({
+      query: () => ({
+        url: "/driver/pending-ride",
       }),
-      invalidatesTags: ["user"],
+      providesTags: ["driver"],
+    }),
+    updateRideStatus: builder.mutation<
+      IResponse<Partial<IRideDetails>>,
+      {
+        status:
+          | "REQUESTED"
+          | "ACCEPTED"
+          | "PICKED_UP"
+          | "IN_TRANSIT"
+          | "COMPLETED"
+          | "CANCELLED";
+      } & { _id: string }
+    >({
+      query: ({ _id, status }) => ({
+        url: `driver/request/${_id}`,
+        method: "PATCH",
+        data: { status: status },
+      }),
+      invalidatesTags: ["driver"],
     }),
   }),
 });
 
 export const {
   useGetEarningHistoryQuery,
-  useGetAdminsQuery,
-  useUpdateUserMutation,
+  useGetAllRideRequestQuery,
+  useGetPendingRideRequestQuery,
+  useUpdateRideStatusMutation,
 } = driverApi;

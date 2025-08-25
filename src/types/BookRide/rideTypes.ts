@@ -16,7 +16,7 @@ export interface IRideRequest {
   rideStatus: string;
   costOfRide: number;
   phone: string;
-  location: Location;
+  location: ILoaction;
   _id: string;
   createdAt: string;
   updatedAt: string;

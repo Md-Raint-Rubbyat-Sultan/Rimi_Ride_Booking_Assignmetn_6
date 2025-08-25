@@ -23,6 +23,7 @@ const RideHistory: React.FC<Props> = () => {
   const [status, setStatus] = useState<string | null>(null);
   const { data, isLoading } = useGetRideHistoryQuery({
     page,
+    limit: 10,
     sort,
     rideStatus: status,
   });

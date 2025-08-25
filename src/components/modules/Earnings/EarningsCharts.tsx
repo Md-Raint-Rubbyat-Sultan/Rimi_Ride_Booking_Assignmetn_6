@@ -13,6 +13,7 @@ import {
   Tooltip,
 } from "chart.js";
 import { motion } from "motion/react";
+import type React from "react";
 import { Bar } from "react-chartjs-2";
 
 ChartJS.register(
@@ -34,12 +35,12 @@ type Props = {
   monthlyEarning: number;
 };
 
-export default function EarningsChart({
+const EarningsChart: React.FC<Props> = ({
   data,
   totalEarning,
   weeklyEarning,
   monthlyEarning,
-}: Props) {
+}) => {
   const dailyEarnings = data?.map((ride) => ({
     day: new Date(ride?.createdAt).toLocaleDateString("en-US"),
     amount: ride?.costOfRide as number,
@@ -121,4 +122,5 @@ export default function EarningsChart({
       </Card>
     </motion.div>
   );
-}
+};
+export default EarningsChart;

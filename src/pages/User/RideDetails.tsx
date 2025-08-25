@@ -174,7 +174,7 @@ const RideDetails: React.FC<Props> = () => {
         </CardContent>
       </Card>
       {/* Cancel Ride */}
-      <CancelRide />
+      {ride?.rideStatus === "REQUESTED" && <CancelRide />}
     </div>
   );
 };
